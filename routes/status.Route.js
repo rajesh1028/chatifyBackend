@@ -18,7 +18,7 @@ statusRoute.post("/add", async (req, res) => {
     try {
         const status = new StatusModel({ name, image, description, views });
         await status.save();
-        res.send(status);
+        res.send("ok");
     } catch (error) {
         console.log(error);
         res.send(error);
