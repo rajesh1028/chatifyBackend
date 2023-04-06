@@ -8,7 +8,6 @@ const { statusRoute } = require("./routes/status.Route");
 
 const app = express();
 app.use(cors());
-
 app.use(express.json())
 
 app.get('/re', (ask, give) => {
