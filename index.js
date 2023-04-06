@@ -8,7 +8,7 @@ const { statusRoute } = require("./routes/status.Route");
 
 const app = express();
 app.use(express.json())
-app.use(cors());
+app.use(cors("*"));
 
 app.get('/re', (ask, give) => {
     let { profile } = require("./google-auth")
