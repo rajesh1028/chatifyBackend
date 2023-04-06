@@ -32,7 +32,7 @@ userRouter.post('/login', async (ask, give) => {
         let hash = user.password;
         bcrypt.compare(password, hash, async (err, result) => {
             if (result) {
-                let token = jwt.sign({ "_id": user._id }, process.env.secret);
+                let token = jwt.sign({ "_id": user._id }, "masai");
                 give.send({ "status": true, "token": token, "name": user.name });
             } else {
                 give.send({ "status": false })

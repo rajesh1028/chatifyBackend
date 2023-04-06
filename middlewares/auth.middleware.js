@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const authenticate=(ask,give,next)=>{
     let token=ask.headers.authorization;
-    jwt.verify(token,process.env.secret,async (err,decoded)=>{
+    jwt.verify(token,"masai",async (err,decoded)=>{
         if(err){
             give.send({ "msg": "Please Login to access" })
         }else{
