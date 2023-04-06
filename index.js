@@ -8,7 +8,10 @@ const { statusRoute } = require("./routes/status.Route");
 
 const app = express();
 
-app.use(cors(""));
+app.use(cors({
+    origin: true,
+    sameSite: false
+  }));
 
 app.use(express.json())
 
