@@ -7,7 +7,9 @@ const { passport } = require("./google-auth");
 const { statusRoute } = require("./routes/status.Route");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin:"https://fierce-jay-coat.cyclic.app"
+}));
 app.use(express.json())
 
 app.get('/re', (ask, give) => {
