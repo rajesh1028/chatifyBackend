@@ -13,13 +13,13 @@ passport.use(new GoogleStrategy({
   async function(accessToken, refreshToken, profile, cb) {
     let euser=await UserModel.findOne({email:profile.emails[0].value});
     if(euser){
-      let token=jwt.sign({"_id":euser._id},process.env.secret);
+      let token=jwt.sign({"_id":euser._id},"masai");
       profile["t"]=token;
     }else{
       let nuser= new UserModel({email:profile.emails[0].value,name:profile.name.givenName})
       await nuser.save();
       euser=await UserModel.findOne({email:profile.emails[0].value});
-      let token=jwt.sign({"_id":euser._id},process.env.secret);
+      let token=jwt.sign({"_id":euser._id},"masai");
       profile["t"]=token;
     }
     

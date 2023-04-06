@@ -34,10 +34,10 @@ app.get('/auth/google/callback',
 
 
 
-app.listen(process.env.port, () => {
+app.listen(3000, () => {
     try {
         connection
-        console.log(`Connected to the DB and server is running at ${process.env.port}`)
+        console.log(`Connected to the DB and server is running at ${3000}`)
     } catch (error) {
         console.log(error);
         console.log("Error in connecting to the DB")
